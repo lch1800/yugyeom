@@ -17,7 +17,7 @@
 
   var TITLE = '서유겸 첫돌에 초대합니다';
   var DESC = '2026년 11월 28일 토요일 오후 2시 30분 · 파티앤프렌즈 마리스홀';
-  var IMAGE = 'assets/og.jpg';
+  var IMAGE = 'assets/og.jpg?v=71f74764';
 
   // ?after=1 같은 확인용 꼬리는 빼고 보낸다
   function pageUrl() { return location.origin + location.pathname; }
