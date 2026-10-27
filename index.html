@@ -303,7 +303,9 @@ section{position:relative;padding:56px 22px}
 .addr p{font-size:17px;line-height:1.7}
 .addr b{font-weight:700}
 .map-btns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 28px;position:relative;z-index:1}
-.map-btns .btn{font-size:20px;padding:0 8px}
+.map-btns .btn{font-size:20px;padding:0 8px;gap:6px;white-space:nowrap}
+.map-btns .btn img{width:30px;height:30px;flex:none}
+#kakaomap img{border-radius:7px}
 .how{position:relative;z-index:1;display:grid;gap:14px}
 .how section{padding:16px 16px 18px;background:#fff;border:2px dashed #9db4cf;border-radius:14px 6px 14px 6px}
 .how h3{font-family:var(--font-hand);font-weight:700;font-size:23px;margin-bottom:8px}
@@ -313,8 +315,7 @@ section{position:relative;padding:56px 22px}
 .chip{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;line-height:1;padding:5px 8px;border-radius:99px}
 
 /* 10 계좌 */
-.pay-intro{position:relative;z-index:1;background:#fff;text-align:center;font-family:var(--font-hand);font-size:clamp(15px,4.4vw,19px);line-height:1.6;padding:4px 0;word-break:keep-all;text-wrap:balance}
-.acc-toggle{width:100%;margin-top:22px;position:relative;z-index:1;justify-content:space-between}
+.acc-toggle{width:100%;position:relative;z-index:1;justify-content:space-between}
 .acc-toggle .dd{transition:transform var(--dur) var(--ease)}
 .acc-toggle[aria-expanded="true"] .dd{transform:rotate(180deg)}
 .acc-panel{position:relative;z-index:1;margin-top:14px;display:grid;gap:12px}
@@ -508,8 +509,8 @@ section{position:relative;padding:56px 22px}
   <div class="head rv"><span class="eyebrow">LOCATION</span><br><h2 id="t-loc">오시는 길<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7C30 11 62 2 98 7" vector-effect="non-scaling-stroke"/></svg></h2></div>
   <div class="addr rv"><p>서울 중구 다산로46길 17 두산위브더제니스</p><p><b>B1층 파티앤프렌즈 [마리스홀]</b></p></div>
   <div class="map-btns rv">
-    <a class="btn blue" id="navermap" href="#" target="_blank" rel="noopener">네이버 지도</a>
-    <a class="btn green" id="kakaomap" href="#" target="_blank" rel="noopener">카카오맵</a>
+    <a class="btn green" id="navermap" href="#" target="_blank" rel="noopener"><img src="assets/ic-navermap.png" width="30" height="30" alt="">네이버 지도</a>
+    <a class="btn" id="kakaomap" href="#" target="_blank" rel="noopener"><img src="assets/ic-kakaomap.png" width="30" height="30" alt="">카카오맵</a>
   </div>
   <div class="how rv">
     <section><h3>🚇 지하철 이용 시</h3>
@@ -529,7 +530,6 @@ section{position:relative;padding:56px 22px}
 <!-- 10 마음 전하는 곳 -->
 <section class="pay" aria-labelledby="t-pay">
   <div class="head rv"><span class="eyebrow">THANKS TO</span><br><h2 id="t-pay">마음 전하는 곳<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
-  <p class="pay-intro rv">직접 축하해 주고 싶지만<br>함께하지 못해 아쉬우신 분들을 위해<br>마음을 전하실 수 있는 곳을 <span style="white-space:nowrap">조심스레 안내드립니다.</span></p>
   <button class="btn red acc-toggle" id="accToggle" type="button" aria-expanded="false" aria-controls="accPanel">계좌번호<svg class="dd" aria-hidden="true"><use href="#i-down"/></svg></button>
   <div class="acc-panel" id="accPanel" hidden>
     <div class="acc"><div><b>아빠 서준호</b><span>국민 694702-01-326678</span></div><button class="copy" type="button" data-copy="694702-01-326678">복사하기</button></div>
