@@ -97,11 +97,6 @@ section{position:relative;padding:56px 22px}
 .tape-red{--tape:rgba(240,110,95,.55)}
 .tape-green{--tape:rgba(110,195,130,.58)}
 
-/* 리빌: JS가 없거나 모션 줄임이면 그대로 보인다 */
-.js .rv{opacity:0;transform:translateY(18px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
-.js .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
-
 /* BGM */
 .bgm{
   position:fixed;top:12px;right:max(12px,calc(50% - 228px));z-index:50;width:46px;height:46px;border-radius:50%;
@@ -414,8 +409,8 @@ section{position:relative;padding:56px 22px}
 
 <!-- 2 초대 -->
 <section class="invite" aria-labelledby="t-invite">
-  <div class="head rv"><span class="eyebrow">INVITATION</span><br><h2 id="t-invite">초대합니다!<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
-  <div class="note rv">
+  <div class="head"><span class="eyebrow">INVITATION</span><br><h2 id="t-invite">초대합니다!<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
+  <div class="note">
     <span class="holes" aria-hidden="true"></span>
     <p>여러분의 아낌없는 사랑과 관심 속에서<br>건강하게 자라 온 저희 유겸이가<br>태어난 지 벌써 일 년이 되었습니다!<br><br>첫돌을 기념하는 뜻으로<br>작게나마 축하의 자리를 마련하였으니,<br>여러분의 따뜻한 축하와 함께해 주시면<br>감사하겠습니다!</p>
   </div>
@@ -423,50 +418,50 @@ section{position:relative;padding:56px 22px}
 
 <!-- 3 돌 사진 -->
 <section class="dol" aria-label="돌 한복 사진">
-  <figure class="pola tape-red rv"><img src="assets/S5.jpg" width="1800" height="1200" loading="lazy" alt="남색 전복과 복건을 쓰고 나무 문 옆에 앉은 돌 한복 차림의 유겸이"></figure>
+  <figure class="pola tape-red"><img src="assets/S5.jpg" width="1800" height="1200" alt="남색 전복과 복건을 쓰고 나무 문 옆에 앉은 돌 한복 차림의 유겸이"></figure>
 </section>
 
 <!-- 4 부모 -->
 <section class="parents" aria-label="부모 이름">
-  <p class="rv">아빠 · 서준호<br>엄마 · 박선화</p>
+  <p>아빠 · 서준호<br>엄마 · 박선화</p>
 </section>
 
 <!-- 5 성장 -->
 <section class="story" aria-labelledby="t-story">
-  <div class="head rv"><span class="eyebrow">A YEAR OF STORY</span><br><h2 id="t-story">1년간의 성장 이야기<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7C30 11 62 2 98 7" vector-effect="non-scaling-stroke"/></svg></h2></div>
+  <div class="head"><span class="eyebrow">A YEAR OF STORY</span><br><h2 id="t-story">1년간의 성장 이야기<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7C30 11 62 2 98 7" vector-effect="non-scaling-stroke"/></svg></h2></div>
 
-  <article class="diary d1 rv">
+  <article class="diary d1">
     <span class="date">2025년 4월 1일</span>
-    <figure class="pola tape-blue"><img src="assets/S1.jpg" width="1210" height="744" loading="lazy" alt="초음파 화면에 비친 작은 아기"></figure>
+    <figure class="pola tape-blue"><img src="assets/S1.jpg" width="1210" height="744" alt="초음파 화면에 비친 작은 아기"></figure>
     <h3>호이와의 첫 인사<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6C30 2 60 9 99 4" vector-effect="non-scaling-stroke"/></svg></h3>
     <p>만우절에 거짓말처럼<br>찾아온 호이</p>
   </article>
 
-  <article class="diary d2 rv">
+  <article class="diary d2">
     <span class="date">2025년 11월 28일</span>
-    <figure class="pola tape-red"><img src="assets/S2.jpg" width="1800" height="1202" loading="lazy" alt="레이스 왕관을 쓰고 속싸개에 싸인 신생아 유겸이"></figure>
+    <figure class="pola tape-red"><img src="assets/S2.jpg" width="1800" height="1202" alt="레이스 왕관을 쓰고 속싸개에 싸인 신생아 유겸이"></figure>
     <h3>우리의 첫 만남<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 5C30 9 60 2 99 6" vector-effect="non-scaling-stroke"/></svg></h3>
     <p>드디어 마주한<br>사랑스러운 유겸이</p>
   </article>
 
-  <article class="diary d3 rv">
+  <article class="diary d3">
     <span class="date">2026년 3월 7일</span>
-    <figure class="pola tape-green"><img src="assets/S3.jpg" width="1200" height="1800" loading="lazy" alt="곰돌이 푸 모자와 빨간 옷을 입은 백일의 유겸이"></figure>
+    <figure class="pola tape-green"><img src="assets/S3.jpg" width="1200" height="1800" alt="곰돌이 푸 모자와 빨간 옷을 입은 백일의 유겸이"></figure>
     <h3>첫번째 축하, 100일<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6C30 2 60 9 99 4" vector-effect="non-scaling-stroke"/></svg></h3>
     <p>무럭무럭 자란 100일,<br>그리고 첫 축하</p>
   </article>
 
-  <article class="diary d4 rv">
+  <article class="diary d4">
     <span class="date">2026년 6월 15일</span>
-    <figure class="pola"><img src="assets/S4.jpg" width="1350" height="1800" loading="lazy" alt="침대 위에서 노란 옷을 입은 200일의 유겸이"></figure>
+    <figure class="pola"><img src="assets/S4.jpg" width="1350" height="1800" alt="침대 위에서 노란 옷을 입은 200일의 유겸이"></figure>
     <h3>200일의 성장<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 5C30 9 60 2 99 6" vector-effect="non-scaling-stroke"/></svg></h3>
     <p>행복한 나날들,<br>엄마 아빠와 함께한 나날들</p>
   </article>
 
-  <article class="diary d5 rv" style="margin-bottom:0">
+  <article class="diary d5" style="margin-bottom:0">
     <span class="date">2026년 11월 28일</span>
     <svg class="dd stamp c-red fill" aria-hidden="true"><use href="#i-heart"/></svg>
-    <figure class="pola tape-red"><img src="assets/G01.jpg" width="1200" height="1800" loading="lazy" alt="빨간 카트 안에 앉아 있는 유겸이"></figure>
+    <figure class="pola tape-red"><img src="assets/G01.jpg" width="1200" height="1800" alt="빨간 카트 안에 앉아 있는 유겸이"></figure>
     <h3>1ST BIRTHDAY<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6C30 2 60 9 99 4" vector-effect="non-scaling-stroke"/></svg></h3>
     <p>사랑과 축복 속에서<br>맞이하는 첫 생일</p>
   </article>
@@ -474,20 +469,20 @@ section{position:relative;padding:56px 22px}
 
 <!-- 6 달력 -->
 <section class="cal-sec" aria-labelledby="t-cal">
-  <div class="head rv"><span class="eyebrow">BIRTHDAY DATE</span></div>
-  <div class="cal-box rv">
+  <div class="head"><span class="eyebrow">BIRTHDAY DATE</span></div>
+  <div class="cal-box">
     <p class="cal-title"><span class="u">2026년 11월<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></span></p>
     <div class="cal" id="cal" role="grid" aria-label="2026년 11월 달력"></div>
   </div>
-  <h2 class="cal-date rv" id="t-cal">2026년 11월 28일<br>토요일 오후 2시 30분</h2>
+  <h2 class="cal-date" id="t-cal">2026년 11월 28일<br>토요일 오후 2시 30분</h2>
 </section>
 
 <!-- 7 카운트다운 / 감사 -->
 <section class="count" id="count" aria-labelledby="t-count">
   <div class="before-only">
-    <div class="head rv"><span class="eyebrow">COUNTDOWN</span><br><h2 id="t-count"><span class="pre-live">유겸이의 첫 생일까지</span><span class="on-live">지금은 생일파티 중!</span><svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7C30 11 62 2 98 7" vector-effect="non-scaling-stroke"/></svg></h2></div>
-    <figure class="pola tape-blue rv"><img src="assets/G03.jpg" width="1800" height="1200" loading="lazy" alt="파란 상자를 잡고 일어서는 유겸이"></figure>
-    <div class="timer rv" role="timer" aria-live="off">
+    <div class="head"><span class="eyebrow">COUNTDOWN</span><br><h2 id="t-count"><span class="pre-live">유겸이의 첫 생일까지</span><span class="on-live">지금은 생일파티 중!</span><svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7C30 11 62 2 98 7" vector-effect="non-scaling-stroke"/></svg></h2></div>
+    <figure class="pola tape-blue"><img src="assets/G03.jpg" width="1800" height="1200" alt="파란 상자를 잡고 일어서는 유겸이"></figure>
+    <div class="timer" role="timer" aria-live="off">
       <div><strong id="cd-d">0</strong><span>Days</span></div>
       <div><strong id="cd-h">0</strong><span>Hours</span></div>
       <div><strong id="cd-m">0</strong><span>Minutes</span></div>
@@ -499,20 +494,20 @@ section{position:relative;padding:56px 22px}
 
 <!-- 8 갤러리 -->
 <section class="gallery" aria-labelledby="t-gal">
-  <div class="head rv"><span class="eyebrow">GALLERY</span><br><h2 id="t-gal">사랑 가득한 모든 순간<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
+  <div class="head"><span class="eyebrow">GALLERY</span><br><h2 id="t-gal">사랑 가득한 모든 순간<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
   <ul class="g-grid" id="grid"></ul>
   <button class="btn more" id="more" type="button">사진 더 보기</button>
 </section>
 
 <!-- 9 오시는 길 -->
 <section class="where" aria-labelledby="t-loc">
-  <div class="head rv"><span class="eyebrow">LOCATION</span><br><h2 id="t-loc">오시는 길<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7C30 11 62 2 98 7" vector-effect="non-scaling-stroke"/></svg></h2></div>
-  <div class="addr rv"><p>서울 중구 다산로46길 17 두산위브더제니스</p><p><b>B1층 파티앤프렌즈 [마리스홀]</b></p></div>
-  <div class="map-btns rv">
+  <div class="head"><span class="eyebrow">LOCATION</span><br><h2 id="t-loc">오시는 길<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7C30 11 62 2 98 7" vector-effect="non-scaling-stroke"/></svg></h2></div>
+  <div class="addr"><p>서울 중구 다산로46길 17 두산위브더제니스</p><p><b>B1층 파티앤프렌즈 [마리스홀]</b></p></div>
+  <div class="map-btns">
     <a class="btn green" id="navermap" href="#" target="_blank" rel="noopener"><img src="assets/ic-navermap.png" width="30" height="30" alt="">네이버 지도</a>
     <a class="btn" id="kakaomap" href="#" target="_blank" rel="noopener"><img src="assets/ic-kakaomap.png" width="30" height="30" alt="">카카오맵</a>
   </div>
-  <div class="how rv">
+  <div class="how">
     <section><h3>🚇 지하철 이용 시</h3>
       <ul><li><span class="chip" style="background:#00A84D">2호선</span><span class="chip" style="background:#CD7C2F">6호선</span> 신당역 11-1, 11번 출구 지하 1층 연결</li>
       <li class="sub">(2호선 이용 시, 6호선 환승구역 방면 이동필요)</li></ul></section>
@@ -529,7 +524,7 @@ section{position:relative;padding:56px 22px}
 
 <!-- 10 마음 전하는 곳 -->
 <section class="pay" aria-labelledby="t-pay">
-  <div class="head rv"><span class="eyebrow">THANKS TO</span><br><h2 id="t-pay">마음 전하는 곳<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
+  <div class="head"><span class="eyebrow">THANKS TO</span><br><h2 id="t-pay">마음 전하는 곳<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
   <button class="btn red acc-toggle" id="accToggle" type="button" aria-expanded="false" aria-controls="accPanel">계좌번호<svg class="dd" aria-hidden="true"><use href="#i-down"/></svg></button>
   <div class="acc-panel" id="accPanel" hidden>
     <div class="acc"><div><b>아빠 서준호</b><span>국민 694702-01-326678</span></div><button class="copy" type="button" data-copy="694702-01-326678">복사하기</button></div>
@@ -539,8 +534,8 @@ section{position:relative;padding:56px 22px}
 
 <!-- 11 마지막 -->
 <section class="end" aria-label="마지막 인사">
-  <div class="photo-wrap rv">
-    <figure class="pola tape-red"><img src="assets/G09.jpg" width="1200" height="1800" loading="lazy" alt="앉아서 위를 올려다보는 유겸이의 얼굴"></figure>
+  <div class="photo-wrap">
+    <figure class="pola tape-red"><img src="assets/G09.jpg" width="1200" height="1800" alt="앉아서 위를 올려다보는 유겸이의 얼굴"></figure>
     <p class="words">첫돌을 함께해 주셔서<br><em>진심으로 감사드립니다.</em></p>
   </div>
   <div class="share">
@@ -565,16 +560,7 @@ section{position:relative;padding:56px 22px}
 (function(){
   'use strict';
   var $=function(s,r){return (r||document).querySelector(s)};
-  document.documentElement.classList.add('js');
   var q=new URLSearchParams(location.search);
-
-  /* 리빌 (4초 안전장치) */
-  var rv=[].slice.call(document.querySelectorAll('.rv'));
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
-    rv.forEach(function(el){io.observe(el)});
-  }
-  setTimeout(function(){rv.forEach(function(el){el.classList.add('in')})},4000);
 
   /* 토스트 */
   var tt,toast=$('#toast');
@@ -638,7 +624,7 @@ section{position:relative;padding:56px 22px}
     var li=document.createElement('li');if(i>=6){li.className='extra';li.hidden=true}
     li.style.setProperty('--ar',p[1]+'/'+p[2]);
     var b=document.createElement('button');b.type='button';b.className='pola';b.setAttribute('aria-label',p[3]+' 크게 보기');
-    b.innerHTML='<img src="assets/'+p[0]+'.jpg" width="'+p[1]+'" height="'+p[2]+'" loading="lazy" alt="'+p[3]+'">';
+    b.innerHTML='<img src="assets/'+p[0]+'.jpg" width="'+p[1]+'" height="'+p[2]+'" alt="'+p[3]+'">';
     b.addEventListener('click',function(){open(i)});
     li.appendChild(b);grid.appendChild(li);
   });
