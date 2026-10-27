@@ -203,7 +203,10 @@ section{position:relative;padding:56px 22px}
 
 /* 6 달력 */
 .cal-box{background:#fff;border:2.5px solid var(--ink);border-radius:var(--blob);padding:18px 14px 18px;position:relative;z-index:1;box-shadow:5px 5px 0 rgba(47,111,216,.22)}
-.cal-title{text-align:center;font-family:var(--font-hand);font-weight:700;font-size:24px;margin-bottom:6px}
+.cal-title{text-align:center;font-family:var(--font-hand);font-weight:700;font-size:24px;margin-bottom:10px}
+.cal-title .u{position:relative;display:inline-block;padding:0 4px}
+.cal-title .ul{position:absolute;left:0;right:0;bottom:-6px;width:100%;height:10px;stroke:var(--red);stroke-width:4;fill:none;stroke-linecap:round;filter:url(#crayon)}
+.cal-date{text-align:center;font-family:var(--font-hand);font-weight:700;font-size:25px;line-height:1.35;margin-top:28px;position:relative;z-index:1}
 .cal-time{text-align:center;font-family:var(--font-hand);font-size:19px;color:var(--ink-soft);margin-bottom:12px}
 .cal{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;row-gap:2px}
 .cal b,.cal span{font-family:var(--font-hand);font-size:20px;line-height:44px;height:44px;position:relative;font-weight:400}
@@ -234,6 +237,15 @@ section{position:relative;padding:56px 22px}
 .timer div:nth-child(4){--c:var(--yellow);--r2:2deg}
 .timer strong{display:block;font-family:var(--font-hand);font-weight:700;font-size:34px;line-height:1.1;font-variant-numeric:tabular-nums}
 .timer span{font-family:var(--font-pen);font-size:19px;color:var(--ink-soft);letter-spacing:.04em}
+/* 14:30~17:00 파티 중: 숫자 대신 안내 */
+.on-live{display:none}
+[data-state="live"] .on-live{display:block}
+[data-state="live"] h2 .on-live{display:inline}
+[data-state="live"] .pre-live,[data-state="live"] .timer{display:none}
+.live-msg{
+  position:relative;z-index:1;text-align:center;font-family:var(--font-hand);font-weight:700;font-size:clamp(17px,4.9vw,20px);line-height:1.6;word-break:keep-all;
+  background:#fff;border:2.5px dashed var(--red);border-radius:var(--blob);padding:14px 12px;transform:rotate(-1deg);
+}
 .thanks{display:none;background:#fff;padding:0 0 46px}
 .thanks-in{position:relative;padding:34px 22px 0;background-image:linear-gradient(transparent 31px,var(--line) 31px 32px);background-size:100% 32px}
 .thanks .head{padding-top:6px}
@@ -301,7 +313,7 @@ section{position:relative;padding:56px 22px}
 .chip{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;line-height:1;padding:5px 8px;border-radius:99px}
 
 /* 10 계좌 */
-.pay-intro{position:relative;z-index:1;background:#fff;text-align:center;font-family:var(--font-hand);font-size:clamp(15px,4.4vw,19px);line-height:1.6;padding:4px 0}
+.pay-intro{position:relative;z-index:1;background:#fff;text-align:center;font-family:var(--font-hand);font-size:clamp(15px,4.4vw,19px);line-height:1.6;padding:4px 0;word-break:keep-all;text-wrap:balance}
 .acc-toggle{width:100%;margin-top:22px;position:relative;z-index:1;justify-content:space-between}
 .acc-toggle .dd{transition:transform var(--dur) var(--ease)}
 .acc-toggle[aria-expanded="true"] .dd{transform:rotate(180deg)}
@@ -401,10 +413,10 @@ section{position:relative;padding:56px 22px}
 
 <!-- 2 초대 -->
 <section class="invite" aria-labelledby="t-invite">
-  <div class="head rv"><span class="eyebrow">INVITATION</span><br><h2 id="t-invite">초대합니다.<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
+  <div class="head rv"><span class="eyebrow">INVITATION</span><br><h2 id="t-invite">초대합니다!<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
   <div class="note rv">
     <span class="holes" aria-hidden="true"></span>
-    <p>여러분들의 아낌없는 사랑과 관심 속에서<br>건강하게 자라온 저희 유겸이가<br>태어난 지 벌써 일 년이 되었습니다.<br>첫돌을 기념하는 뜻으로 작게나마<br>축하의 자리를 마련하였으니<br>여러분들의 많은 관심과 성원 부탁드립니다.</p>
+    <p>여러분의 아낌없는 사랑과 관심 속에서<br>건강하게 자라 온 저희 유겸이가<br>태어난 지 벌써 일 년이 되었습니다!<br><br>첫돌을 기념하는 뜻으로<br>작게나마 축하의 자리를 마련하였으니,<br>여러분의 따뜻한 축하와 함께해 주시면<br>감사하겠습니다!</p>
   </div>
 </section>
 
@@ -415,7 +427,7 @@ section{position:relative;padding:56px 22px}
 
 <!-- 4 부모 -->
 <section class="parents" aria-label="부모 이름">
-  <p class="rv">아빠 서준호 · 엄마 박선화</p>
+  <p class="rv">아빠 · 서준호<br>엄마 · 박선화</p>
 </section>
 
 <!-- 5 성장 -->
@@ -426,28 +438,28 @@ section{position:relative;padding:56px 22px}
     <span class="date">2025년 4월 1일</span>
     <figure class="pola tape-blue"><img src="assets/S1.jpg" width="1210" height="744" loading="lazy" alt="초음파 화면에 비친 작은 아기"></figure>
     <h3>호이와의 첫 인사<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6C30 2 60 9 99 4" vector-effect="non-scaling-stroke"/></svg></h3>
-    <p>희미한 빛 속에서<br>처음 마주한 작은 생명</p>
+    <p>만우절에 거짓말처럼<br>찾아온 호이</p>
   </article>
 
   <article class="diary d2 rv">
     <span class="date">2025년 11월 28일</span>
     <figure class="pola tape-red"><img src="assets/S2.jpg" width="1800" height="1202" loading="lazy" alt="레이스 왕관을 쓰고 속싸개에 싸인 신생아 유겸이"></figure>
     <h3>우리의 첫 만남<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 5C30 9 60 2 99 6" vector-effect="non-scaling-stroke"/></svg></h3>
-    <p>유겸이와 처음 만난 날</p>
+    <p>드디어 마주한<br>사랑스러운 유겸이</p>
   </article>
 
   <article class="diary d3 rv">
     <span class="date">2026년 3월 7일</span>
     <figure class="pola tape-green"><img src="assets/S3.jpg" width="1200" height="1800" loading="lazy" alt="곰돌이 푸 모자와 빨간 옷을 입은 백일의 유겸이"></figure>
-    <h3>첫번째 축하 100일<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6C30 2 60 9 99 4" vector-effect="non-scaling-stroke"/></svg></h3>
-    <p>목 가누기, 뒤집기까지<br>성장을 축하하는 날</p>
+    <h3>첫번째 축하, 100일<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6C30 2 60 9 99 4" vector-effect="non-scaling-stroke"/></svg></h3>
+    <p>무럭무럭 자란 100일,<br>그리고 첫 축하</p>
   </article>
 
   <article class="diary d4 rv">
     <span class="date">2026년 6월 15일</span>
     <figure class="pola"><img src="assets/S4.jpg" width="1350" height="1800" loading="lazy" alt="침대 위에서 노란 옷을 입은 200일의 유겸이"></figure>
-    <h3>200일의 기적<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 5C30 9 60 2 99 6" vector-effect="non-scaling-stroke"/></svg></h3>
-    <p>행복한 성장을 함께한 날</p>
+    <h3>200일의 성장<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 5C30 9 60 2 99 6" vector-effect="non-scaling-stroke"/></svg></h3>
+    <p>행복한 나날들,<br>엄마 아빠와 함께한 나날들</p>
   </article>
 
   <article class="diary d5 rv" style="margin-bottom:0">
@@ -461,17 +473,18 @@ section{position:relative;padding:56px 22px}
 
 <!-- 6 달력 -->
 <section class="cal-sec" aria-labelledby="t-cal">
-  <div class="head rv"><span class="eyebrow">BIRTHDAY DATE</span><br><h2 id="t-cal" style="font-size:25px">2026년 11월 28일<br>토요일 오후 2시 30분<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
+  <div class="head rv"><span class="eyebrow">BIRTHDAY DATE</span></div>
   <div class="cal-box rv">
-    <p class="cal-title">2026년 11월</p>
+    <p class="cal-title"><span class="u">2026년 11월<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></span></p>
     <div class="cal" id="cal" role="grid" aria-label="2026년 11월 달력"></div>
   </div>
+  <h2 class="cal-date rv" id="t-cal">2026년 11월 28일<br>토요일 오후 2시 30분</h2>
 </section>
 
 <!-- 7 카운트다운 / 감사 -->
 <section class="count" id="count" aria-labelledby="t-count">
   <div class="before-only">
-    <div class="head rv"><span class="eyebrow">COUNTDOWN</span><br><h2 id="t-count">유겸이의 첫 생일까지<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7C30 11 62 2 98 7" vector-effect="non-scaling-stroke"/></svg></h2></div>
+    <div class="head rv"><span class="eyebrow">COUNTDOWN</span><br><h2 id="t-count"><span class="pre-live">유겸이의 첫 생일까지</span><span class="on-live">지금은 생일파티 중!</span><svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7C30 11 62 2 98 7" vector-effect="non-scaling-stroke"/></svg></h2></div>
     <figure class="pola tape-blue rv"><img src="assets/G03.jpg" width="1800" height="1200" loading="lazy" alt="파란 상자를 잡고 일어서는 유겸이"></figure>
     <div class="timer rv" role="timer" aria-live="off">
       <div><strong id="cd-d">0</strong><span>Days</span></div>
@@ -479,6 +492,7 @@ section{position:relative;padding:56px 22px}
       <div><strong id="cd-m">0</strong><span>Minutes</span></div>
       <div><strong id="cd-s">0</strong><span>Seconds</span></div>
     </div>
+    <p class="live-msg on-live">오후 2시 30분부터 오후 5시까지<br>유겸이의 첫 생일파티가 열리고 있어요</p>
   </div>
 </section>
 
@@ -515,7 +529,7 @@ section{position:relative;padding:56px 22px}
 <!-- 10 마음 전하는 곳 -->
 <section class="pay" aria-labelledby="t-pay">
   <div class="head rv"><span class="eyebrow">THANKS TO</span><br><h2 id="t-pay">마음 전하는 곳<svg class="ul" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C28 2 60 11 98 4" vector-effect="non-scaling-stroke"/></svg></h2></div>
-  <p class="pay-intro rv">직접 축하를 전하지 못하는 분들을 위해<br>부득이하게 계좌번호를 기재하게 되었습니다.<br>넓은 마음으로 양해 부탁드립니다.</p>
+  <p class="pay-intro rv">직접 축하해 주고 싶지만<br>함께하지 못해 아쉬우신 분들을 위해<br>마음을 전하실 수 있는 곳을 <span style="white-space:nowrap">조심스레 안내드립니다.</span></p>
   <button class="btn red acc-toggle" id="accToggle" type="button" aria-expanded="false" aria-controls="accPanel">계좌번호<svg class="dd" aria-hidden="true"><use href="#i-down"/></svg></button>
   <div class="acc-panel" id="accPanel" hidden>
     <div class="acc"><div><b>아빠 서준호</b><span>국민 694702-01-326678</span></div><button class="copy" type="button" data-copy="694702-01-326678">복사하기</button></div>
@@ -590,17 +604,18 @@ section{position:relative;padding:56px 22px}
   cal.innerHTML=h;
 
   /* 카운트다운 */
+  // 14:30 까지 카운트다운, 14:30~17:00 파티 중 안내, 17:00 부터 첫 화면이 감사 인사
   var T=new Date('2026-11-28T14:30:00+09:00').getTime();
+  var END=new Date('2026-11-28T17:00:00+09:00').getTime();
   var els={d:$('#cd-d'),h:$('#cd-h'),m:$('#cd-m'),s:$('#cd-s')};
   var root=document.documentElement;
-  // 열어 둔 채 14:30 이 지나면 위쪽 메인·카운트다운이 접히므로, 보던 섹션이 화면에서 같은 자리에 남게 스크롤을 맞춘다
+  // 열어 둔 채 17:00 이 지나면 위쪽 메인·카운트다운이 접히므로, 보던 섹션이 화면에서 같은 자리에 남게 스크롤을 맞춘다
   function anchor(){
     var secs=document.querySelectorAll('main > section:not(.thanks):not(.hero):not(.count)');
     for(var i=0;i<secs.length;i++){if(secs[i].getBoundingClientRect().bottom>0)return secs[i]}
   }
   function tick(){
-    var now=Date.now(),state='before';
-    if(now>=T)state='after';
+    var now=Date.now(),state=now>=END?'after':now>=T?'live':'before';
     if(root.dataset.state!==state){
       var a=root.dataset.state&&scrollY>0&&anchor(),top=a&&a.getBoundingClientRect().top;
       root.dataset.state=state;
